@@ -1,1 +1,2 @@
-this 0x06. C - More pointers, arrays and strings
+
+this the task 0x06. C - More pointers, arrays and strings
