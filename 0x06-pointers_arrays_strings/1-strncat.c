@@ -1,33 +1,25 @@
 #include "holberton.h"
 
 /**
- * _strncat - two words
- * @dest : pointer to char param
- * @src : pointer to char param
- * @n : int parameter
- * Return: *dest
+ * _strncat - concatenates n number of characters
+ * from src to dest
+ * @dest: destination string.
+ * @src: the source to be concatenated.
+ * @n: the number of bytes of src to be concatenated.
+ *
+ * Return: dest.
  */
-
 char *_strncat(char *dest, char *src, int n)
 {
-	int m;
-	int i;
+	int len;
+	char *ptr;
 
-	m = 0;
+	for (len = 0; dest[len] != '\0'; len++)
+		;
+	ptr = dest + len;
+	while (*src != '\0' && n--)
+		*ptr++ = *src++;
 
-	for (i = 0; i < 1000; i++)
-	{
-		if (dest[i] == '\0')
-		{
-			break;
-		}
-		m++;
-	}
-
-	for (i = 0; src[i] != '\0' && i < n; i++)
-	{
-		dest[m + i] = src[i];
-	}
-	dest[m + i] = '\0';
+	*ptr = '\0';
 	return (dest);
 }
